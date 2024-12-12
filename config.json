@@ -1,0 +1,67 @@
+{
+  "mqtt":{
+      "connection":{
+          "brokerUrl": "mqtt://192.168.0.211",
+          "options":{
+            "port": 1883,
+            "username":"",
+            "password":""
+          },
+          "baseTopic": "m/",
+          "polling_interval": 1000
+      },
+      "topic_mapping": [
+          {"organization":"conestoga"},
+          {"division":"smart"},
+          {"line":"presorter"},
+          {"type":"robot2"}
+      ]
+  },
+  "plc":{
+      "connection": {
+          "localAmsNetId": "192.168.0.129.1.1",
+          "localAdsPort": 32729,
+          "targetAmsNetId": "10.193.21.105.1.1",
+          "targetAdsPort": 851,
+          "routerAddress": "192.168.0.210",
+          "routerTcpPort": 48898
+      },
+      "tags": {
+          "MachineStatus": [
+            { "description": "SystemInitialized", "tagname": "HMI_GVL.M.INITIALIZED", "datatype":"boolean" },
+            { "description": "SystemRunning", "tagname": "HMI_GVL.M.RUNNING", "datatype":"boolean" },
+            { "description": "SystemPaused", "tagname": "HMI_GVL.M.PAUSED", "datatype":"boolean" },
+            { "description": "PctFullSpeed", "tagname": "HMI_GVL.M.SPEEDPERCENTAGE", "datatype":"real" },
+            { "description": "SafetyRelayEnabled", "tagname": "HMI_GVL.M.SAFETY_ENABLE", "datatype":"boolean" }
+          ],
+          "RobotStatus": [
+            { "description": "RobotInitialized", "tagname": "HMI_GVL.M.Rob2.INITIALIZED", "datatype":"boolean" },
+            { "description": "RobotRunning", "tagname": "HMI_GVL.M.Rob2.RUNNING", "datatype":"boolean" },
+            { "description": "WorkspaceViolation", "tagname": "HMI_GVL.M.Rob2.WSVIOLATION", "datatype":"boolean" },
+            { "description": "RobotPaused", "tagname": "HMI_GVL.M.Rob2.PAUSED", "datatype":"boolean" },
+            { "description": "PctFullSpeed", "tagname": "HMI_GVL.M.Rob2.SPEEDPERCENTAGE", "datatype":"real" },
+            { "description": "Cycles", "tagname": "HMI_GVL.M.Rob2.FINISHEDPARTNUM", "datatype":"integer" }
+          ],
+          "RobotPosition": [
+            { "description": "XPos", "tagname": "HMI_GVL.M.Rob2.ROBOTPOS.X", "datatype":"real" },
+            { "description": "YPos", "tagname": "HMI_GVL.M.Rob2.ROBOTPOS.Y", "datatype":"real" },
+            { "description": "ZPos", "tagname": "HMI_GVL.M.Rob2.ROBOTPOS.Z", "datatype":"real" }
+          ],
+          "MotorTorque": [
+            { "description": "M1Torque", "tagname": "HMI_GVL.M.Rob2.MACTTORQUE[1]", "datatype":"real" },
+            { "description": "M2Torque", "tagname": "HMI_GVL.M.Rob2.MACTTORQUE[2]", "datatype":"real" },
+            { "description": "M3Torque", "tagname": "HMI_GVL.M.Rob2.MACTTORQUE[3]", "datatype":"real" },
+            { "description": "M4Torque", "tagname": "HMI_GVL.M.Rob2.MACTTORQUE[4]", "datatype":"real" }
+          ]
+      }         
+  },
+  "database": {
+      "connection": {
+          "host": "192.168.0.211",
+          "port": 3306,
+          "user": "postgres",
+          "password": "academy2024!",
+          "database": "academy27"
+      }
+  }
+}

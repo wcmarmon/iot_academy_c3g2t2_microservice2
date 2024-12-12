@@ -1,0 +1,16 @@
+# Node modules 
+node_modules/ 
+# Build output 
+dist/ 
+files/
+ignore/
+# TypeScript compiled JavaScript 
+*.js 
+*.js.map 
+# Logs 
+logs/ 
+*.log 
+# Dependency directories 
+npm-debug.log* 
+yarn-debug.log*
+yarn-error.log*

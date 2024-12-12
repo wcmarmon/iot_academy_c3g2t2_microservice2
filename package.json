@@ -1,0 +1,23 @@
+{
+  "name": "microservice2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node dist/index.js"
+  },
+  "keywords": [],
+  "author": "Wmarmon9820@conestogac.on.ca",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/ads-client": "^1.14.6",
+    "@types/mqtt": "^2.5.0",
+    "@types/node": "^22.10.1",
+    "@types/pg": "^8.11.10",
+    "ads-client": "^1.14.4",
+    "mqtt": "^5.10.3",
+    "pg": "^8.13.1",
+    "typescript": "^5.7.2"
+  }
+}
